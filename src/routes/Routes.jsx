@@ -7,11 +7,14 @@ import MyTutorials from "../pages/MyTutorials";
 import MyBookedTutorials from "../pages/MyBookedTutorials";
 import SignUp from "../pages/SignUp";
 import SignIn from "../pages/SignIn";
+import ErrorPage from "../pages/ErrorPage";
+import PrivateRoute from "../pages/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:'/',
@@ -27,11 +30,11 @@ export const router = createBrowserRouter([
         },
         {
             path:'/my-tutorials/:email',
-            element:<MyTutorials></MyTutorials>
+            element:<PrivateRoute><MyTutorials></MyTutorials></PrivateRoute>
         },
         {
             path:'/my-booked-tutors/:email',
-            element:<MyBookedTutorials></MyBookedTutorials>
+            element:<PrivateRoute><MyBookedTutorials></MyBookedTutorials></PrivateRoute>
         },
       ]
     },
