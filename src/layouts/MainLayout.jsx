@@ -5,7 +5,7 @@ import Nav from '../components/Nav';
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className='font-raleway'>
             <Nav></Nav>
             <Outlet></Outlet>
             <Footer></Footer>

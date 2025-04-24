@@ -5,6 +5,9 @@ import AddTutorials from "../pages/AddTutorials";
 import FindTutors from "../pages/FindTutors";
 import MyTutorials from "../pages/MyTutorials";
 import MyBookedTutorials from "../pages/MyBookedTutorials";
+import SignUp from "../pages/SignUp";
+import SignIn from "../pages/SignIn";
+
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -23,13 +26,21 @@ export const router = createBrowserRouter([
             element:<FindTutors></FindTutors>
         },
         {
-            path:'/my-tutorials',
+            path:'/my-tutorials/:email',
             element:<MyTutorials></MyTutorials>
         },
         {
-            path:'/my-booked-tutors',
+            path:'/my-booked-tutors/:email',
             element:<MyBookedTutorials></MyBookedTutorials>
         },
       ]
     },
+    {
+        path:'/sign-up',
+        element:<SignUp></SignUp>
+    },
+    {
+        path:'/sign-in',
+        element:<SignIn></SignIn>
+    }
   ]);
