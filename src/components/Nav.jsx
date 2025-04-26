@@ -73,21 +73,26 @@ const Nav = () => {
                         {
                             user ?
                                 <div className='flex gap-3 items-center justify-center'>
-                                    <div className="relative group inline-block">
-
-                                        {/* Avatar (Trigger) */}
-                                        <div className="btn btn-ghost btn-circle avatar">
+                                    <div className="dropdown dropdown-end">
+                                        {/* Trigger: Avatar button */}
+                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                             <div className="w-10 rounded-full">
-                                                <img src={user ? user.photoURL : profile} alt="User Avatar" />
+                                                <img referrerPolicy="no-referrer" src={user ? user.photoURL : profile} alt="User Avatar" />
                                             </div>
-                                        </div>
+                                        </label>
 
-                                        {/* Hover Menu (Display Name + Logout) */}
-                                        <div className="absolute right-0 mt-2 w-40 bg-base-100 p-2 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                                            <p className="text-center font-semibold">{user.displayName}</p>
-                                        </div>
-
+                                        {/* Dropdown Menu */}
+                                        <ul
+                                            tabIndex={0}
+                                            className="-left-7 menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40 "
+                                        >
+                                            <li>
+                                                <p className="text-center font-semibold pointer-events-none">{user?.displayName}</p>
+                                            </li>
+                                           
+                                        </ul>
                                     </div>
+
                                     <div>
                                         <button className="btn btn-error btn-sm w-full mt-2" onClick={() => {
                                             logOut()
@@ -98,7 +103,7 @@ const Nav = () => {
                                     </div>
                                 </div> :
                                 <div className='flex gap-2  md:gap-3 items-center'>
-                                    <button className="px-1 py-1 md:p-2 btn  bg-transparent border text-black md:font-bold rounded-md dark:text-white"><Link to='/sign-up'>Sign Up</Link></button>
+                                    {/* <button className="px-1 py-1 md:p-2 btn  bg-transparent border text-black md:font-bold rounded-md dark:text-white"><Link to='/sign-up'>Sign Up</Link></button> */}
                                     <button className="px-1 py-1 btn bg-red-500 text-white md:p-2  md:font-bold rounded-md "><Link to='/sign-in'>Sign In</Link></button>
                                 </div>
                         }
