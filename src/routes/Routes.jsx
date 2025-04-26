@@ -9,6 +9,8 @@ import SignUp from "../pages/SignUp";
 import SignIn from "../pages/SignIn";
 import ErrorPage from "../pages/ErrorPage";
 import PrivateRoute from "../pages/PrivateRoute";
+import AboutUs from "../pages/AboutUs";
+import ContactUs from "../pages/ContactUs";
 
 export const router = createBrowserRouter([
     {
@@ -36,6 +38,14 @@ export const router = createBrowserRouter([
             path:'/my-booked-tutors/:email',
             element:<PrivateRoute><MyBookedTutorials></MyBookedTutorials></PrivateRoute>
         },
+        {
+            path:'/about-us',
+            element:<AboutUs></AboutUs>
+        },
+        {
+            path:'/contact-us',
+            element:<ContactUs></ContactUs>
+        }
       ]
     },
     {
@@ -45,5 +55,6 @@ export const router = createBrowserRouter([
     {
         path:'/sign-in',
         element:<SignIn></SignIn>
-    }
+    },
+    
   ]);

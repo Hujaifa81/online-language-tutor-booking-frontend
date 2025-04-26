@@ -3,6 +3,8 @@ import Slider from '../components/slider/Slider';
 import Stats from '../components/Stats';
 import Categories from '../components/Categories';
 import Testimonials from '../components/testimonials/Testimonials';
+import BecomeTutor from '../components/BecomeTutor';
+import Footer from '../components/Footer';
 
 const Home = () => {
     return (
@@ -17,6 +19,10 @@ const Home = () => {
             <div>
                 <Testimonials></Testimonials>
             </div>
+            <div>
+                <BecomeTutor></BecomeTutor>
+            </div>
+            
             
         </div>
     );
