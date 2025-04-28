@@ -34,11 +34,11 @@ const Nav = () => {
                                 isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Home</NavLink></li>
                             <li><NavLink to='find-tutors' className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Find Tutors</NavLink></li>
-                            <li><NavLink to='/add-tutorials' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Add Tutorials</NavLink></li>
-                            <li><NavLink to={`/my-tutorials/${user?.email}`} className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>My Tutorials</NavLink></li>
-                            <li><NavLink to={`/my-booked-tutors/${user?.email}`} className={({ isActive, isPending }) =>
+                            <li><NavLink to='/add-tutor' className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Add Tutor</NavLink></li>
+                            <li><NavLink to={`/my-tutors`} className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>My Tutors</NavLink></li>
+                            <li><NavLink to={`/my-booked-tutors`} className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>My Booked Tutors</NavLink></li>
 
                         </ul>
@@ -55,11 +55,11 @@ const Nav = () => {
                                 isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Home</NavLink></li>
                             <li><NavLink to='find-tutors' className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Find Tutors</NavLink></li>
-                            <li><NavLink to='/add-tutorials' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Add Tutorials</NavLink></li>
-                            <li><NavLink to={`/my-tutorials/${user?.email}`} className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>My Tutorials</NavLink></li>
-                            <li><NavLink to={`/my-booked-tutors/${user?.email}`} className={({ isActive, isPending }) =>
+                            <li><NavLink to='/add-tutor' className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Add Tutor</NavLink></li>
+                            <li><NavLink to={`/my-tutors`} className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>My Tutors</NavLink></li>
+                            <li><NavLink to={`/my-booked-tutors`} className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>My Booked Tutors</NavLink></li>
                         </ul>
                     </div>

@@ -16,9 +16,9 @@ const AboutUs = () => {
                     <h2 className="text-xl font-semibold text-gray-500">Our Mission</h2>
                     <p className="mt-6 text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                         Our mission at <span className="text-blue-600 font-semibold">Hi Tutor</span> is to empower individuals across the globe to learn new languages with confidence.
-                        <br /><br />
+                        <br />
                         We believe that language is a bridge — connecting cultures, opportunities, and communities. Through personalized lessons with experienced tutors, flexible scheduling, and real-world practice, we aim to make language learning simple, accessible, and inspiring for everyone.
-                        <br /><br />
+                        <br />
                         We are committed to breaking barriers, opening doors, and helping you achieve your dreams — one word at a time.
                     </p>
                 </div>
