@@ -11,7 +11,7 @@ const TutorDetails = () => {
     const { user } = useAuth();
     const queryClient = useQueryClient();
 
-    // 1. Define function first
+    
     const fetchTutorData = async () => {
         const response = await axios.get(`${import.meta.env.VITE_baseURL}/tutor/${id}`);
         return response.data;
@@ -30,7 +30,7 @@ const TutorDetails = () => {
         return res.data;
     };
 
-    // 2. Then hooks
+  
     const { data, isLoading, isError, error } = useQuery({
         queryKey: ['tutorDetails', id],
         queryFn: fetchTutorData,
