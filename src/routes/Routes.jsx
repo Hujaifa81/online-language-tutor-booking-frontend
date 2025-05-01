@@ -33,6 +33,10 @@ export const router = createBrowserRouter([
             element:<FindTutors></FindTutors>
         },
         {
+            path:'/find-tutors/:category',
+            element:<FindTutors></FindTutors>
+        },
+        {
             path:'/my-tutors',
             element:<PrivateRoute><MyTutors></MyTutors></PrivateRoute>
         },

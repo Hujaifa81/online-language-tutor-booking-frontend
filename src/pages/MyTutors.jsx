@@ -5,15 +5,18 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import Loading from '../components/Loading';
 import Modal from '../components/Modal';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 const MyTutors = () => {
   const { user } = useAuth();
   const [tutorData, setTutorData] = useState(null);
+  const axiosSecure=useAxiosSecure()
   const queryClient = useQueryClient();
   
 
   const fetchMyAddedTutors = async () => {
-    const response = await axios.get(`${import.meta.env.VITE_baseURL}/tutors/${user?.email}`);
+    // const response = await axios.get(`${import.meta.env.VITE_baseURL}/tutors/${user?.email}`,{withCredentials:true});
+    const response=await axiosSecure.get(`/tutors/${user?.email}`)
     return response.data;
   };
 

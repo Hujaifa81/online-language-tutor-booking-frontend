@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import profile from '../assets/no-profile-picture-15257.png'
 import useAuth from '../hooks/useAuth';
@@ -7,6 +7,7 @@ import useAuth from '../hooks/useAuth';
 const Nav = () => {
     const { user, logOut } = useAuth()
     const navigate = useNavigate()
+    const {category}=useParams()
     const handleTheme = () => {
 
         const theme = document.querySelector('.theme-controller')
@@ -32,8 +33,8 @@ const Nav = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li><NavLink to='/' className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Home</NavLink></li>
-                            <li><NavLink to='find-tutors' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Find Tutors</NavLink></li>
+                            <li><NavLink to='/find-tutors' className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive && !category ? "bg-red-600 px-2 rounded py-1" : ""}>Find Tutors</NavLink></li>
                             <li><NavLink to='/add-tutor' className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Add Tutor</NavLink></li>
                             <li><NavLink to={`/my-tutors`} className={({ isActive, isPending }) =>
@@ -53,8 +54,8 @@ const Nav = () => {
                         <ul className="menu menu-horizontal px-1 gap-4 items-center">
                             <li><NavLink to='/' className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Home</NavLink></li>
-                            <li><NavLink to='find-tutors' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Find Tutors</NavLink></li>
+                            <li><NavLink to='/find-tutors' className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive && !category ? "bg-red-600 px-2 rounded py-1" : ""}>Find Tutors</NavLink></li>
                             <li><NavLink to='/add-tutor' className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "bg-red-600 px-2 rounded py-1" : ""}>Add Tutor</NavLink></li>
                             <li><NavLink to={`/my-tutors`} className={({ isActive, isPending }) =>
