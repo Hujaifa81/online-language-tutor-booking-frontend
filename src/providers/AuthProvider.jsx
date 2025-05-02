@@ -41,7 +41,7 @@ export const AuthProvider = ({children}) => {
             else{
                 axios.post(`${import.meta.env.VITE_baseURL}/logout`,{},{withCredentials:true})
                 .then(res=>{
-                    console.log('logout',res.data)
+                    console.log(res.data)
                 })
                 setUser(null)
                 setLoading(false)
