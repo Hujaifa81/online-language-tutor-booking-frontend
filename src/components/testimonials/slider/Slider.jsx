@@ -124,7 +124,7 @@ const Slider = () => {
             </div>
 
             {/* Custom navigation buttons */}
-            <div className="flex items-center justify-between mt-6 md:justify-start absolute z-30 md:bottom-36   max-w-6xl mx-auto ml-44">
+            <div className="flex items-center justify-between mt-6 md:justify-start absolute z-30 md:bottom-36 bottom-32  max-w-6xl mx-auto ml-44">
                 {/* Left arrow */}
                 <button
                     title="Previous"
