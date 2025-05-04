@@ -5,8 +5,10 @@ import axios from 'axios';
 import Loading from '../components/Loading';
 import useAuth from '../hooks/useAuth';
 import toast from 'react-hot-toast';
+import useTitle from '../hooks/useTitle';
 
 const TutorDetails = () => {
+    
     const { id } = useParams();
     const { user } = useAuth();
     const queryClient = useQueryClient();
@@ -25,6 +27,7 @@ const TutorDetails = () => {
             price,
             tutor_email: email,
             email: user?.email,
+            
         };
         const res = await axios.post(`${import.meta.env.VITE_baseURL}/bookedTutor`, bookingData);
         return res.data;
@@ -35,7 +38,7 @@ const TutorDetails = () => {
         queryKey: ['tutorDetails', id],
         queryFn: fetchTutorData,
     });
-
+    
     const { mutate, isPending, isSuccess, isError: bookedIsError, error: bookedError } = useMutation({
         mutationFn: handleBook,
         onSuccess: () => {
@@ -48,12 +51,12 @@ const TutorDetails = () => {
     });
 
     const { name, image, language, description, price, review, email } = data || {};
-
+    useTitle(name)
     if (isLoading) return <Loading />;
     if (isError) return <div>Error: {error.message}</div>;
 
     return (
-        <div className="max-w-md mx-auto  dark:bg-gray-800 rounded-2xl shadow overflow-hidden transform hover:scale-105 transition duration-300">
+        <div className="max-w-md mx-auto my-5 dark:bg-gray-800 rounded-2xl shadow overflow-hidden transform hover:scale-105 transition duration-300">
             {/* Tutor Image */}
             <img
                 src={image}

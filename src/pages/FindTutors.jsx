@@ -107,7 +107,7 @@ const FindTutors = () => {
           )}
 
           {/* Pagination */}
-          <div className="mt-4 space-x-2">
+          <div className="mt-4 space-x-2 flex justify-center items-center">
             <button
               onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
               disabled={currentPage === 1}
