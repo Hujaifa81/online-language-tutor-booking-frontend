@@ -31,7 +31,7 @@ const ContactUs = () => {
                 Have questions? Feel free to reach out to us by filling out the form below.
             </p>
 
-            <form onSubmit={handleSubmit} className="mt-8 bg-gray-100 p-6 rounded-lg shadow-lg">
+            <form onSubmit={handleSubmit} className="mt-8  p-6 rounded-lg shadow-lg">
                 <div className="mb-4">
                     <label className="block text-gray-700 font-semibold">Your Name</label>
                     <input 

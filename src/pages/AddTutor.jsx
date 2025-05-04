@@ -51,7 +51,7 @@ const AddTutor = () => {
 
     return (
         <div>
-            <div className="max-w-xl mx-auto p-5">
+            <div className="max-w-xl mx-auto p-5 dark:bg-black">
                 <h2 className="text-2xl font-bold mb-4 dark:text-white">Add Tutor</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 

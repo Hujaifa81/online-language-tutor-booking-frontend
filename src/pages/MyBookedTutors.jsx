@@ -50,11 +50,11 @@ const MyBookedTutors = () => {
         return <div>Error: {error.message}</div>;
     }
     return (
-        <div>
+        <div className='dark:bg-black'>
             {data.length === 0 ? (
-                <p className="text-center text-2xl font-bold">No booked tutors found.</p>
+                <p className="text-center text-2xl font-bold dark:text-white">No booked tutors found.</p>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 dark:bg-gray-300">
                     {data.map((tutor) => (
                         <div key={tutor._id} className="border p-4 rounded shadow">
                             <h3 className="text-xl font-semibold">{tutor.tutor_name}</h3>

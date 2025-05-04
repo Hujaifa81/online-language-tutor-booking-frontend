@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import profile from '../assets/no-profile-picture-15257.png'
@@ -8,14 +8,28 @@ const Nav = () => {
     const { user, logOut } = useAuth()
     const navigate = useNavigate()
     const {category}=useParams()
+    useEffect(()=>{
+        const theme = document.querySelector('.theme-controller')
+        if (localStorage.getItem('theme') === 'dark') {
+            theme.checked = true
+            document.documentElement.setAttribute('data-theme', 'dark')
+            localStorage.setItem('theme', 'dark')
+        } else {
+            theme.checked = false
+            document.documentElement.setAttribute('data-theme', 'light')
+            localStorage.setItem('theme', 'light')
+        }
+    },[])
     const handleTheme = () => {
 
         const theme = document.querySelector('.theme-controller')
 
         if (theme.checked) {
             document.documentElement.setAttribute('data-theme', 'dark')
+            localStorage.setItem('theme', 'dark')
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
+            localStorage.setItem('theme', 'light')
         }
     }
 
@@ -68,7 +82,7 @@ const Nav = () => {
 
                 <div className="navbar-end gap-2   ">
                     <div>
-                        <input type="checkbox" value="synthwave" className="toggle theme-controller" onClick={handleTheme} />
+                        <input type="checkbox"  className="toggle theme-controller" onClick={handleTheme} />
                     </div>
                     <div>
                         {

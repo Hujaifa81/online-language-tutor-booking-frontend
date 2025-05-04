@@ -47,8 +47,8 @@ const MyTutors = () => {
   if (isError) return <div>Error: {error.message}</div>;
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-6">
-      <div className="overflow-x-auto bg-white shadow-lg rounded-lg">
+    <div className="min-h-screen bg-gray-100 py-10 px-6 dark:bg-black">
+      <div className="overflow-x-auto  shadow-lg rounded-lg">
         <table className="min-w-full table-auto">
           <thead className="bg-blue-600 text-white">
             <tr>
@@ -61,7 +61,7 @@ const MyTutors = () => {
               <th className="px-6 py-3 text-left text-sm font-semibold">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-200 dark:divide-white dark:bg-gray-300">
             {data?.length > 0 ? (
               data.map((tutor) => (
                 <tr key={tutor._id} className="hover:bg-gray-50 transition">

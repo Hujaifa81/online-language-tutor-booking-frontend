@@ -8,9 +8,9 @@ import Footer from '../components/Footer';
 
 const Home = () => {
     return (
-        <div>
+        <div className='dark:bg-gray-900'>
             <Slider></Slider>
-            <div className='mt-5'>
+            <div className='mt-5 '>
             <Stats></Stats>
             </div>
             <div>
@@ -19,7 +19,7 @@ const Home = () => {
             <div>
                 <Testimonials></Testimonials>
             </div>
-            <div>
+            <div className='bg-white dark:bg-gray-800'>
                 <BecomeTutor></BecomeTutor>
             </div>
             

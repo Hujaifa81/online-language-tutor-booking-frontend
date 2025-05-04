@@ -22,7 +22,7 @@ const Categories = () => {
         
     
         if (isLoading) {
-            return <Loading />; // Ensure Loading component is properly defined
+            return <Loading />; 
         }
     
         if (isError) {
@@ -33,7 +33,7 @@ const Categories = () => {
 
     return (
         <div>
-            <div className='p-6 grid grid-cols-3 gap-4'>
+            <div className='p-6 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4'>
                 {
                     data?.map((category) => (
                         <SingleCategoryCard key={category._id} category={category._id} count={category.count}></SingleCategoryCard>

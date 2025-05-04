@@ -12,7 +12,7 @@ const AboutUs = () => {
                 At TutorConnect, we believe that learning a new language opens doors to new cultures, careers, and communities.
             </p>
             <div className="mt-8 flex justify-center items-center gap-6">
-                <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+                <div className="p-6  rounded-lg shadow-md">
                     <h2 className="text-xl font-semibold text-gray-500">Our Mission</h2>
                     <p className="mt-6 text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                         Our mission at <span className="text-blue-600 font-semibold">Hi Tutor</span> is to empower individuals across the globe to learn new languages with confidence.

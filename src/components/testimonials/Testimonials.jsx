@@ -4,7 +4,7 @@ import Slider from './slider/Slider';
 
 const Testimonials = () => {
     return (
-        <div>
+        <div className='dark:bg-gray-900'>
             <Slider></Slider>
         </div>
     );

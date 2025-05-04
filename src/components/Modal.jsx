@@ -1,11 +1,11 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 
 const Modal = ({ tutor, setTutorData }) => {
-  const modalRef = useRef(null);
+ 
   const queryClient = useQueryClient();
 
   const {
@@ -141,7 +141,7 @@ const Modal = ({ tutor, setTutorData }) => {
             <button
               className="btn"
               onClick={() => {
-                setTutorData(null);
+                // setTutorData(null);
               }}
             >
               Close

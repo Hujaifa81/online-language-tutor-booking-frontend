@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const BecomeTutor = () => {
   return (
-    <div className="bg-white dark:bg-gray-900 py-16">
+    <div className="bg-white dark:bg-black py-16">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-300 mb-4">
           Become a Tutor
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">

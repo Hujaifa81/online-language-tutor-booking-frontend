@@ -53,7 +53,7 @@ const TutorDetails = () => {
     if (isError) return <div>Error: {error.message}</div>;
 
     return (
-        <div className="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow overflow-hidden transform hover:scale-105 transition duration-300">
+        <div className="max-w-md mx-auto  dark:bg-gray-800 rounded-2xl shadow overflow-hidden transform hover:scale-105 transition duration-300">
             {/* Tutor Image */}
             <img
                 src={image}
