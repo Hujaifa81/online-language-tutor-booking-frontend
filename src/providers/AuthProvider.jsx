@@ -32,7 +32,7 @@ export const AuthProvider = ({children}) => {
                         withCredentials:true
                     })
                     .then(res=>{
-                        console.log('from sign in',res.data)
+                        
                     })
                 }
                 setLoading(false)
@@ -41,7 +41,7 @@ export const AuthProvider = ({children}) => {
             else{
                 axios.post(`${import.meta.env.VITE_baseURL}/logout`,{},{withCredentials:true})
                 .then(res=>{
-                    console.log('from logout',res.data)
+                    
                 })
                 setUser(null)
                 setLoading(false)

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 const useTitle = (detailsTitle) => {
     const location = useLocation();
-    console.log(location.pathname);
+    
 
     useEffect(() => {
         let pageTitle 
