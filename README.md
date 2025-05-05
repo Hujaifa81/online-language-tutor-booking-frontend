@@ -2,8 +2,8 @@
 
 **Hi Tutor** is a full-stack online tutor booking platform that allows users to book tutors, and tutors to add, update, or remove their listings. This project is built using modern tools like **React**, **Express**, **MongoDB**, **Firebase Auth**, **TanStack Query**,**axios** and **TailwindCSS with DaisyUI** for an interactive and responsive UI.
 
-🔗 **Live Site:** [visit live site](https://online-tutor-booking-5eb85.web.app/)
-🔗 **Backend Repository:** [visit backend repository](https://github.com/Hujaifa81/online-language-tutor-booking-backend)
+- 🔗 **Live Site:** [visit live site](https://online-tutor-booking-5eb85.web.app/)
+- 🔗 **Backend Repository:** [visit backend repository](https://github.com/Hujaifa81/online-language-tutor-booking-backend)
 
 ---
 
