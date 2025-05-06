@@ -4,13 +4,15 @@ import useAuth from '../hooks/useAuth';
 import toast from 'react-hot-toast';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import Loading from '../components/Loading';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 const MyBookedTutors = () => {
     const {user}= useAuth();
     const queryClient = useQueryClient();
+    const axiosSecure=useAxiosSecure()
     const fetchMyBookedTutors = async () => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_baseURL}/bookedTutors/${user?.email}`);
+            const response = await axiosSecure.get(`${import.meta.env.VITE_baseURL}/bookedTutors/${user?.email}`);
             return response.data;
         } catch (error) {
             toast.error('Failed to fetch tutors');

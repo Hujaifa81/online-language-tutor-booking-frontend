@@ -1,23 +1,27 @@
-import React, { useContext} from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../providers/AuthProvider';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 // import useTitle from '../hooks/UseTitle';
 
 const SignIn = () => {
-    const { emailSignIn, googleSignIn } = useContext(AuthContext)
+    const { emailSignIn, googleSignIn, user, loading } = useAuth()
     // useTitle()
     const navigate = useNavigate()
     const location = useLocation();
 
-    const { register, handleSubmit,watch,formState: { errors } } = useForm();
-    const email=watch("email")
+
+   
+
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const email = watch("email")
     const handleGoogle = () => {
         googleSignIn()
             .then(() => {
-                navigate(location.state || "/");
-                
+                navigate( "/");
+
             })
             .catch(error => {
                 toast.error(error.message);
@@ -28,15 +32,15 @@ const SignIn = () => {
         emailSignIn(data.email, data.password)
             .then(() => {
                 toast.success("Login successful!");
-                navigate(location.state || "/");
-                
+                navigate("/");
+
             })
             .catch((error) => {
                 toast.error(error.message.split('/')[1].slice(0, error.message.split('/')[1].length - 2));
-                
+
 
             });
-       
+
     }
     return (
         <div>
@@ -46,10 +50,10 @@ const SignIn = () => {
 
                     <div>
                         <label className="block font-medium dark:text-white">Email</label>
-                        <input type="text" className="w-full border p-2 rounded dark:bg-gray-400"  
+                        <input type="text" className="w-full border p-2 rounded dark:bg-gray-400"
                             {...register("email", {
                                 required: "Email is required",
-                                
+
                             })} />
                         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
                     </div>
@@ -58,7 +62,7 @@ const SignIn = () => {
                         <input type="password" className="w-full border p-2 rounded dark:bg-gray-400"
                             {...register("password", {
                                 required: "Password is required",
-                                
+
                             })} />
                         {errors.password && <p className="text-red-500">{errors.password.message}</p>}
                     </div>
@@ -66,8 +70,8 @@ const SignIn = () => {
                         <Link
                             className="link link-hover"
                             to="/forget-password"
-                            state={ {email} }
-                            >
+                            state={{ email }}
+                        >
                             Forgot password?
                         </Link>
                     </div>

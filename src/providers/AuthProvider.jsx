@@ -22,37 +22,25 @@ export const AuthProvider = ({children}) => {
     const logOut=()=>{
        return signOut(auth)
     }
-    useEffect(()=>{
-        const unsubscribe=onAuthStateChanged(auth, (currentUser) => {
-            if(currentUser){
-                setUser(currentUser)
-                if(currentUser?.email){
-                    const user={email:currentUser.email}
-                    axios.post(`${import.meta.env.VITE_baseURL}/jwt`,user,{
-                        withCredentials:true
-                    })
-                    .then(res=>{
-                        
-                    })
-                }
-                setLoading(false)
-                
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+          if (currentUser) {
+            setUser(currentUser);
+            // Set token
+            if (currentUser?.email) {
+              axios.post(`${import.meta.env.VITE_baseURL}/jwt`, { email: currentUser.email }, {
+                withCredentials: true
+              });
             }
-            else{
-                axios.post(`${import.meta.env.VITE_baseURL}/logout`,{},{withCredentials:true})
-                .then(res=>{
-                    
-                })
-                setUser(null)
-                setLoading(false)
-            }
-            
-            
-          })
-          return ()=>{
-            unsubscribe()
+          } else {
+            axios.post(`${import.meta.env.VITE_baseURL}/logout`, {}, { withCredentials: true });
+            setUser(null);
           }
-    },[])
+          setLoading(false);
+        });
+        return () => unsubscribe();
+      }, []);
+      
     const value={
         googleSignIn,
         emailSignIn,
